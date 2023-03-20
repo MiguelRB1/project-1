@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+  }
+  
+  .navbar > ul > li {
+    list-style-type: none;
+    margin-left: 3rem;
+    padding: 15px 5px;
+  }
+  a:hover {
+    font-weight: bold;
+  }
+  
+  .navbar > ul {
+    display: flex;
+    justify-content: center;
+    background-color: seagreen;
+    margin-top: 0;
+    font-size: 1.12rem;
+  }
+  
+  a:-webkit-any-link {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  img {
+    width: 50%;
+  }
+  .wrapper {
+    text-align: center;
+  }
+  
