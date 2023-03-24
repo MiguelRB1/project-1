@@ -37,6 +37,10 @@ body {
   a:-webkit-any-link {
     color: black;
     cursor: pointer;
+
+
+    text-decoration: none; 
+
   }
  
 
@@ -77,7 +81,11 @@ height: 300px;
   border: 6px solid black;
   border-radius: 5%;
   object-fit:cover;
+
   width: 45%;
+
+  
+
   height: 300px;
   margin: 5px 30px 5px 10px;
   }
@@ -117,7 +125,11 @@ height: 300px;
   border: 6px solid black;
   border-radius: 5%;
   object-fit:cover;
+
   width: 45%;
+
+  
+
   height: 300px;
   margin: 5px 30px 5px 10px;
   }
@@ -151,7 +163,9 @@ height: 300px;
 }
 
 #img3 {
+
   float: right;
+  
   border: 6px solid black;
   border-radius: 5%;
   object-fit:cover;
