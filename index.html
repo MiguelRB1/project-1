@@ -1,116 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fit3 </title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <!-- <link rel="stylesheet" href="assets/style.css" /> --> </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fit3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" /><title>Fit3 </title>
+    <link rel="stylesheet" href="assets/css/style.css">
   
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href="https://bulma.io">
-      <img src="assets/logoproject1.PNG" width="112" height="28">
-  
-      </a>  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      </a>
-    </div> 
-     
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-       <a href=#nutan class="navbar-item">
-       Nutritional Analysis
-       </a>
-       <a href=#nutcal class="navbar-item">
-       Nutrition Calculator
-       </a>
-       <a href=#recipe class="navbar-item">
-       Recipe Search
-       </a>
-     </div>
-    </div>
-
-</nav><section class="hero is-success">
- <div class="hero-body">
-  <p class="title">
-   Take Control. Get results.
-  </p>
-  <p class="subtitle">
-   Fit for life! Fit for work! Fit for tomorrow!
-  </p>
- </div>
-
-</section> <!-- </section> -->
- <div class="container my-5">
-  <div class="columns is-1 is-variable">
-   <div class="column is-4" id="nutan">
-    <div class="card">
-     <div class="card-content">
-      <div class="content">
-       <p class="title is-4">Nutritional Analysis</p>
-       <p class="subtitle is-6">Find nutrition facts for your favorite brands and fast-food restaurants.</p>
+  </head>
+  <body>
+    <class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="assets/logoproject1.PNG" width="112" height="28">
+        </a>      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>      </a>
       </div>
-      
-      <div class="card-image">
-       <figure class="image is-3by2">
-        <img
-         src="https://osher.ucsf.edu/sites/osher.ucsf.edu/files/styles/og_style/public/2018-07/treatment_int_nutrition_hero.jpg?itok=4O7mkJDe"
-         alt="Placeholder image">
-       </figure>
+      </nav>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a href=#nutan class="navbar-item">
+              Nutritional Analysis
+              </a>
+              <a href=#nutcal class="navbar-item">
+              Nutrition Calculator
+              </a>
+              <a href=#recipe class="navbar-item">
+              Recipe Search
+              </a>
+          </div>
+        </div>
+      </nav>
+      <section class="hero is-success">
+        <div class="hero-body">
+          <p class="title">
+            Take Control. Get results.
+          </p>
+          <p class="subtitle">
+            Fit for life! Fit for work! Fit for tomorrow!
+          </p>
+        </div>
+      </section>
+      <div class="container my-5">
+        <div class="columns is-1 is-variable">
+          <div class="column is-4" id="nutan" onclick="opensection(1)">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-4">Nutritional Analysis</p>
+                  <p class="subtitle is-6">Find nutrition facts for your favorite brands and fast-food restaurants.</p>
+                </div>
+                <div class="card-image">
+                  <figure class="image is-3by2">
+                    <img
+                      src="https://osher.ucsf.edu/sites/osher.ucsf.edu/files/styles/og_style/public/2018-07/treatment_int_nutrition_hero.jpg?itok=4O7mkJDe"
+                      alt="Placeholder image">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4" id="nutcal" onclick="opensection(2)">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-4">Nutrition Calculator</p>
+                  <p class="subtitle is-6">Find nutrition facts for your favorite brands and fast-food restaurants.</p>
+                </div>
+                <div class="card-image">
+                  <figure class="image is-3by2">
+                    <img
+                      src="https://media.istockphoto.com/id/1316145885/photo/food-ready-to-eat.jpg?s=612x612&w=0&k=20&c=bhTMFGn5V6ITrVEbJsg0yrBZuZeR3dHBTYaR7ydE-Kc="
+                      alt="Placeholder image">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-4" id="recipe">
+            <div class="card">
+              <div class="card-content">
+                <div class="content">
+                  <p class="title is-4">Recipe Search</p>
+                  <p class="subtitle is-6"> Nutritional content, Serving size, and calories for a recommended serving of a
+                    food</p>
+                </div>
+                <div class="card-image">
+                  <figure class="image is-3by2">
+                    <img
+                      src="https://media.istockphoto.com/id/1355099604/photo/chef-at-the-pass.jpg?s=612x612&w=0&k=20&c=d7xYNo1L8DFEfPW8bDa7kA9lMxcGE23327QOXjvA6g0="
+                      alt="Placeholder image">
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-     </div>
-    </div>
-   </div>   
-   
-   <div class="column is-4" id="nutcal">
-    <div class="card">
-     <div class="card-content">
-      <div class="content">
-       <p class="title is-4">Nutrition Calculator</p>
-       <p class="subtitle is-6">Find nutrition facts for your favorite brands and fast-food restaurants.</p>
+      <div class="box boxholder" id="modalDiv">
+        <button class="btnclose" onclick="closeSection()">Close <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <div class="field">
+          <label class="label">Food to Search</label>
+          <div class="control">
+            <input class="input" id="foodname" type="text" placeholder="Which Food Would You want Information On">
+          </div>
+        </div>
+        <button class="button is-primary" id="nutritionanalysisbtn" onclick="getNutrition()">Nutrition Analysis</button>
+        <button class="button is-primary" id="nutritioncalculatorbtn" onclick="calculateNutrition()">Nutrition Calculator</button>
+        <ul id="foodCalcDetails"></ul>
+        <div class="box sidenav">
+          <h2>Nutrition Facts: <span id="foodnametop">FoodName</span></h2><br>
+          <h4>Amount Per Serving</h4><br>        <p>Total Calories <span id="caloriesid">0 </span> kcal</p>
+          <p>Total Fat <span id="fatid">0 </span> g</p>
+          <p>Cholesterol <span id="cholestralid">0 </span> mg</p>
+          <p>Total Carbohydrate <span id="cabsid">0 </span> g</p>
+          <p>Protein <span id="proteinsid">0 </span> g</p>
+          <p>Calcium  <span id="calciumid">0 </span> mg</p>
+          <p>Potassium  <span id="potasiumid">0 </span> mg</p>
+        </div>
       </div>
-      <div class="card-image">
-       <figure class="image is-3by2">
-        <img
-         src="https://media.istockphoto.com/id/1316145885/photo/food-ready-to-eat.jpg?s=612x612&w=0&k=20&c=bhTMFGn5V6ITrVEbJsg0yrBZuZeR3dHBTYaR7ydE-Kc="
-         alt="Placeholder image">
-       </figure>
-      </div>
-     </div>
-    </div>
-   
-  </div>   <div class="column is-4" id="recipe">
-    <div class="card">
-     <div class="card-content">
-      <div class="content">
-       <p class="title is-4">Recipe Search</p>
-       <p class="subtitle is-6"> Nutritional content, Serving size, and calories for a recommended serving of a
-        food</p>
-      </div>
-      
-      <div class="card-image">
-       <figure class="image is-3by2">
-        <img
-         src="https://media.istockphoto.com/id/1355099604/photo/chef-at-the-pass.jpg?s=612x612&w=0&k=20&c=d7xYNo1L8DFEfPW8bDa7kA9lMxcGE23327QOXjvA6g0="
-         alt="Placeholder image">
-       </figure>
-      </div>
-     </div>
-    </div>
-   </div>  </div>
- 
-  </div> <footer class="footer has-background-success-dark">
-  <div class="content has-text-centered has-text-white">
-   <p>
-    The materials found on this website are not intended to be used for the diagnosis or treatment of a health
-    problem or as a substitute for consulting a
-    licensed health professional. Thank you for visiting Fit3.com!
-   </p>
-  </div>
- </footer>
-</body>
- </html>
+      <footer class="footer has-background-success-dark">
+        <div class="content has-text-centered has-text-white">
+          <p>
+            The materials found on this website are not intended to be used for the diagnosis or treatment of a health
+            problem or as a substitute for consulting a
+            licensed health professional. Thank you for visiting Fit3.com!
+          </p>
+        </div>
+      </footer>
+      <script src="./assets/javascript/script.js"></script>
+  </body>
+  </html>
