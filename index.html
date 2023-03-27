@@ -1,6 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<style>
+ .boxholder{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 70%;
+  }
+  .box.boxholder{
+    display: none;
+  }
+  .boxholder table{
+    width: 50%;
+    margin: 2%;
+  }
+  .sidenav{
+    position: relative;
+    float: right;
+    top: 10%;
+    width: 35%;
+    margin: 0;
+    padding: 0;
+    height: 70%;
+    /* background-color: blue; */
+  }
+  .sidenav h2, .sidenav h4{
+    line-height: 40px;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  .sidenav span{
+    font-weight: bold;
+  }
+  .column{
+    cursor: pointer;
+  }
+  ul{
+    position: absolute;
+    left: 2%;
+    width: 55%;
+    height: 70%;
+    top: 25%;
+    /* background-color: brown; */
+  }
+  ul li{
+    position: relative;
+    float: left;
+    width: 90%;
+    min-height: 40px;
+    margin: 1% 5%;
+    /* background-color: beige; */
+  }
+  ul li button{
+    position: relative;
+    float: left;
+    width: 25%;
+    margin: 5px 1%;
+    height: 35px;
+  }
+  ul li div{
+    position: relative;
+    float: left;
+    width: 45%;
+  }
+  ul li div p{
+    position: relative;
+    float: left;
+    width: 100%;
+    text-align: right;
+  }
+  #nutritionanalysisbtn, #nutritioncalculatorbtn{
+    display: none;
+  }
+</style>
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,10 +86,6 @@
 <title>Fit3 </title>
 <!-- <link rel="stylesheet" href="assets/style.css" /> -->
 </head>
-
-
-
-
 <class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <a class="navbar-item" href="https://bulma.io">
@@ -28,7 +99,6 @@
 
     </a>
   </div>
-  
   </nav>
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
@@ -44,7 +114,6 @@
       </div>
     </div>
   </nav>
-
   <section class="hero is-success">
     <div class="hero-body">
       <p class="title">
@@ -55,11 +124,9 @@
       </p>
     </div>
   </section>
-
-
   <div class="container my-5">
     <div class="columns is-1 is-variable">
-      <div class="column is-4" id="nutan">
+      <div class="column is-4" id="nutan" onclick="opensection(1)">
         <div class="card">
           <div class="card-content">
             <div class="content">
@@ -76,9 +143,7 @@
           </div>
         </div>
       </div>
-
-
-      <div class="column is-4" id="nutcal">
+      <div class="column is-4" id="nutcal" onclick="opensection(2)">
         <div class="card">
           <div class="card-content">
             <div class="content">
@@ -95,8 +160,6 @@
           </div>
         </div>
       </div>
-
-
       <div class="column is-4" id="recipe">
         <div class="card">
           <div class="card-content">
@@ -115,10 +178,31 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
+  <div class="box boxholder" id="modalDiv">
+    <div class="field">
+      <label class="label">Food to Search</label>
+      <div class="control">
+        <input class="input" id="foodname" type="text" placeholder="Which Food Would You want Information On">
+      </div>
+    </div>
+    <button class="button is-primary" id="nutritionanalysisbtn" onclick="getNutrition()">Nutrition Analysis</button>
+    <button class="button is-primary" id="nutritioncalculatorbtn" onclick="calculateNutrition()">Nutrition Calculator</button>
+    <ul id="foodCalcDetails"></ul>
+    <div class="box sidenav">
+      <h2>Nutrition Facts: <span id="foodnametop">FoodName</span></h2><br>
+      <h4>Amount Per Serving</h4><br>
 
+      <p>Total Calories <span id="caloriesid">1.4 </span> kcal</p>
+      <p>Total Fat <span id="fatid">1.4 </span> g</p>
+      <p>Cholesterol <span id="cholestralid">17.9 </span> mg</p>
+      <p>Total Carbohydrate <span id="cabsid">0 </span> g</p>
+      <p>Protein <span id="proteinsid">6.1 </span> g</p>
+      <p>Calcium  <span id="calciumid">3.7 </span> mg</p>
+      <p>Potassium  <span id="potasiumid">105.7 </span> mg</p>
+    </div>
+  </div>
   <footer class="footer has-background-success-dark">
     <div class="content has-text-centered has-text-white">
       <p>
