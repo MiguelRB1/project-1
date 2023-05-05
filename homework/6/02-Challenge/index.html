@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+
+    <div>
+        <div>
+            <div>
+                Search for a City:
+            </div>
+            <input id="search" placeholder="search...">
+            <button id="search_btn">search</button>
+            <div id="cities">
+                <!-- <ul id="cities">
+                    <li id="city_1" class="city"></li>
+                    <li id="city_2" class="city"></li>
+                    <li id="city_3" class="city"></li>
+                    <li id="city_4" class="city"></li>
+                    <li id="city_5" class="city"></li>
+                    <li id="city_6" class="city"></li>
+                    <li id="city_7" class="city"></li>
+                    <li id="city_8" class="city"></li>
+                </ul> -->
+            </div>
+            <br>
+            <br>
+            <div id="something">
+                dfdfdf
+            </div>
+            
+        </div>
+    </div>
+
+    <script>
+        var city = ["Atlanta", "Denver", "Seattle", "San Francisco", "Orlando", "New York", "Chicago", "Austin"]
+    
+        localStorage.setItem("City", JSON.stringify(city))
+        var cities = JSON.parse(localStorage.getItem("City"))
+
+        var something = document.getElementById("something");
+        
+        // for (i=0; i<(cities.length) ; i++){
+        //     // console.log()
+     
+        //     document.querySelector(`#city_${i+1}`).innerHTML = cities[i]
+        // }
+
+        for (let i = 0; i < cities.length; i++) {
+            const city_ = cities[i];
+            var city_div=document.createElement("div");
+            city_div.textContent=city_;
+            document.getElementById("cities").append(city_div)
+        }
+
+        var searchButton = document.getElementById("search_btn");
+
+        var inputValue = document.getElementById("search");
+
+        fetch("https://api.openweathermap.org/data/2.5/weather?q=Atlanta,usa&APPID=b3d8a2004c09344e9c1563543c626c92")
+        .then(response => response.json())
+        .then(data => console.log(data));
+
+        // for (i = 0; i < weatherULEl.length; i++) {
+        //         var tempDay = data.daily[i].temp.day;
+        //         var windSpeed = data.daily[i].wind_speed;
+        //         var humid = data.daily[i].humidity;
+        //         var uvIndex = data.daily[i].uvi;
+        //         var iconID = data.daily[i].weather[0].icon;
+        //         var utcDate = data.daily[i].dt;
+        //         var date = new Date(utcDate * 1000);
+        //         var day = date.getDate();
+        //         var month = date.getMonth() + 1;
+        //         var year = date.getFullYear();
+        //         var dateFormatted = month.toString() + '/' + day.toString() + '/' + year.toString();
+
+        //         //  adding the formatting to display on website
+        //         // current day formatting 
+        //         if (i === 0) {
+        //             currentDataList.innerText = searchCity + "  (" + dateFormatted + ")";
+        //             weatherULEl[i].innerHTML = "<li><img src='https://openweathermap.org/img/wn/" + iconID.toString() + ".png'></li><li>Temp: " + tempDay.toString() + "</li> <li>Wind: " + windSpeed.toString() + " MPH</li> <li>Humidity: " + humid.toString() + "%</li> <li id='uvI'>UV Index: " + uvIndex.toString() + "</li>";
+        //             var uvIEl = document.getElementById('uvI');
+        //             console.log(uvIEl);
+        //             if (uvIndex <= 2) {
+        //                 uvIEl.classList.add("low");
+        //             }
+        //             else if (uvIndex > 7) {
+        //                 uvIEl.classList.add("high");
+        //             }
+        //             else {
+        //                 uvIEl.classList.add("medium");
+        //             }
+        //         }
+        //         // 5 day forecast formatting
+        //         else {
+        //             weatherULEl[i].innerHTML = "<li><label>Date:</label>" + dateFormatted + "</li> <li><img src='https://openweathermap.org/img/wn/" + iconID.toString() + ".png'></li> <li>Temp: " + tempDay.toString() + "</li> <li>Wind: " + windSpeed.toString() + " MPH</li> <li>Humidity: " + humid.toString() + "%</li>"
+        //         }
+        //     };
+
+        searchButton.addEventListener("click", (event)=>{
+            // console.log(event)
+            event.preventDefault();
+            var val=inputValue.value;
+
+            // console.log(val)
+            if(cities.includes(val)){
+               
+                console.log("Cities: ", cities)
+                fetch(`https://api.openweathermap.org/data/2.5/weather?q=${val},usa&APPID=b3d8a2004c09344e9c1563543c626c92`)
+                .then(response => response.json())
+                .then(data => console.log(data));
+                console.log("data type: ", data)
+                var temp = data.main.temp;
+                console.log(temp)
+                something.innerHTML = temp;
+                
+                var tempDay = data.daily[i].temp.day;
+                var windSpeed = data.daily[i].wind_speed;
+                var humid = data.daily[i].humidity;
+                // var uvIndex = data.daily[i].uvi;
+                // var iconID = data.daily[i].weather[0].icon;
+                // var utcDate = data.daily[i].dt;
+                var date = new Date(utcDate * 1000);
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                var dateFormatted = month.toString() + '/' + day.toString() + '/' + year.toString();
+
+                //  adding the formatting to display on website
+                // current day formatting 
+                if (i === 0) {
+                    currentDataList.innerText = searchCity + "  (" + dateFormatted + ")";
+                    weatherULEl[i].innerHTML = "<li><img src='https://openweathermap.org/img/wn/" + iconID.toString() + ".png'></li><li>Temp: " + tempDay.toString() + "</li> <li>Wind: " + windSpeed.toString() + " MPH</li> <li>Humidity: " + humid.toString() + "%</li> <li id='uvI'>UV Index: " + uvIndex.toString() + "</li>";
+                    var uvIEl = document.getElementById('uvI');
+                    console.log(uvIEl);
+                    if (uvIndex <= 2) {
+                        uvIEl.classList.add("low");
+                    }
+                    else if (uvIndex > 7) {
+                        uvIEl.classList.add("high");
+                    }
+                    else {
+                        uvIEl.classList.add("medium");
+                    }
+                }
+                // 5 day forecast formatting
+                else {
+                    weatherULEl[i].innerHTML = "<li><label>Date:</label>" + dateFormatted + "</li> <li><img src='https://openweathermap.org/img/wn/" + iconID.toString() + ".png'></li> <li>Temp: " + tempDay.toString() + "</li> <li>Wind: " + windSpeed.toString() + " MPH</li> <li>Humidity: " + humid.toString() + "%</li>"
+                }
+         
+
+
+               
+            }else{
+                console.log(typeof("Local Storage City: ", cities[0]))
+                console.log(typeof("Input Value: ", val))
+
+                console.log("Wrong City")  
+            }
+            // var storageItem=JSON.parse(window.localStorage.getItem("savedCities")) || [];
+            // storageItem.push(val);
+            // window.localStorage.setItem("savedCities", JSON.stringify(storageItem))
+        })
+        // var storageItems=JSON.parse(window.localStorage.getItem("savedCities"))
+
+    </script>
+
+</body>
+
+</html>
+
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <input type="text" id="city">
+     <button id="search">Search</button>
+     <div id="storagebuttonscontainer"></div>
+ <script>
+     var inputValue=document.getElementById("city");
+     var searchButton=document.getElementById("search");
+     searchButton.addEventListener("click", (event)=>{
+        search  event.preventDefault();
+         var val=inputValue.value;
+         console.log(val)
+         var storageItem=JSON.parse(window.localStorage.getItem("savedCities")) || [];
+         storageItem.push(val);
+         window.localStorage.setItem("savedCities", JSON.stringify(storageItem))
+     })
+     var storageItems=JSON.parse(window.localStorage.getItem("savedCities"))
+     for (let i = 0; i < storageItems.length; i++) {
+         const element = storageItems[i];
+         var storageButton=document.createElement("button");
+         storageButton.textContent=element;
+         document.getElementById("storagebuttonscontainer").append(storageButton)
+     }
+ </script>
+ </body>
+ </html>  -->

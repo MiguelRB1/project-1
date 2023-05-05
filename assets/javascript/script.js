@@ -38,7 +38,7 @@ function getNutrition(){
     calcium_value =  document.getElementById("calciumid")
     potasium_value =  document.getElementById("potasiumid")
     tableBody =  document.getElementById("tableBody")
-    foodname =  document.getElementById("foodnametop")
+    foodName =  document.getElementById("foodnametop")
 
 
     fetch("https://api.edamam.com/api/nutrition-data?app_id=" + api_id_nutrition + "&app_key="+ app_key_nutrition +"&nutrition-type=cooking&ingr="+ formatedfood)
